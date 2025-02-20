@@ -1,7 +1,7 @@
 export default {
   pages: [
     'pages/index/index',
-    'pages/index/dayTimeLine'
+    'pages/day/index'
   ],
   window: {
     backgroundTextStyle: 'light',
