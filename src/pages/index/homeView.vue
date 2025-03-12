@@ -18,7 +18,6 @@
       <view>
         <nut-swiper
           :init-page="0"
-          :auto-play="false"
           style="height: 35vh; display: flex;"
           direction="horizontal"
         >
@@ -33,7 +32,6 @@
       <view>
         <nut-swiper
           :init-page="0"
-          :auto-play="false"
           style="height: 35vh; display: flex;"
           direction="horizontal"
         >
@@ -48,7 +46,6 @@
       <view>
         <nut-swiper
           :init-page="0"
-          :auto-play="false"
           style="height: 35vh; display: flex;"
           direction="horizontal"
         >
@@ -63,7 +60,6 @@
       <view>
         <nut-swiper
           :init-page="0"
-          :auto-play="false"
           style="height: 35vh; display: flex;"
           direction="horizontal"
         >
@@ -77,7 +73,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref,h } from 'vue'
+import { ref } from 'vue'
 const list = ref([
   'https://storage.360buyimg.com/jdc-article/NutUItaro34.jpg',
   'https://storage.360buyimg.com/jdc-article/NutUItaro2.jpg',
@@ -85,6 +81,3 @@ const list = ref([
   'https://storage.360buyimg.com/jdc-article/fristfabu.jpg'
 ])
 </script>
-<style scoped>
-
-</style>
