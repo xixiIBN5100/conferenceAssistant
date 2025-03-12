@@ -1,16 +1,16 @@
 <template>
-  <view>
-    <view class="flex gap-5 rounded-sm shadow border">
-      <nut-avatar> 用户 </nut-avatar>
-      <view>name</view>
+  <view class="user">
+    <view class="title-bar">
+      <nut-avatar size="80"> 用户 </nut-avatar>
+      <view class="name">name</view>
     </view>
     <view>
 
     </view>
-    <nut-button type="warning">退出登录</nut-button>
+    <nut-button class="quit-btn" type="warning">退出登录</nut-button>
   </view>
 </template>
 
 <script setup lang="ts">
-
+import "./myView.scss"
 </script>
