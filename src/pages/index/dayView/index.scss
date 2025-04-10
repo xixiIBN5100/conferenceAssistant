@@ -1,0 +1,66 @@
+.dayView {
+  background-color: beige;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  text {
+    font-size: 3rem;
+  }
+}
+
+.search {
+  padding: 0 30px;
+}
+
+.meeting {
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.date {
+  background-color: gainsboro;
+  font-size: 1.2rem;
+  width: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 34px;
+}
+
+.meeting-details {
+  background-color: gainsboro;
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.meeting-image {
+  width: 100%;
+  display: block;
+}
+
+.meeting-title {
+  font-size: 36rpx;
+  padding: 15px;
+}
+
+.meeting-time {
+  font-size: 28rpx;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  gap: 10rpx;
+}
+
+.meeting-location {
+  display: flex;
+  align-items: center;
+  gap: 10rpx;
+  font-size: 28rpx;
+  padding: 0 15px 10px;
+} 
