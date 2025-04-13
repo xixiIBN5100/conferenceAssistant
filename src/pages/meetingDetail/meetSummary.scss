@@ -1,0 +1,10 @@
+@import "../../style/color.scss";
+
+.summary {
+  .text {
+    margin: 30px;
+    border: $border-color solid 8px;
+    border-radius: 8px;
+    background-color: $background-color-dark;
+  }
+}

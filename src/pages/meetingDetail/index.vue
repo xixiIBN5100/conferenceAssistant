@@ -18,8 +18,8 @@
           <view>{{ "安恒大厦1楼" }}</view>
         </view>
         <view class="info-item">
-          <Eye/>
-          <view>{{ "114514" }}</view>
+          <Download/>
+          <view>资料下载</view>
         </view>
       </view>
     </view>
@@ -30,22 +30,22 @@
       <view class="tag-bar">
         <view :class="selectedPlate==1?'selected':null" @tap="selectedPlate=1">会议聊天</view>
         <view :class="selectedPlate==2?'selected':null" @tap="selectedPlate=2">会议议程</view>
-        <view :class="selectedPlate==3?'selected':null" @tap="selectedPlate=3">会议推荐</view>
+        <view :class="selectedPlate==3?'selected':null" @tap="selectedPlate=3">会议总结</view>
       </view>
       <chat v-show="selectedPlate==1"/>
       <agenda v-show="selectedPlate==2"/>
-      <command v-show="selectedPlate==3"/>
+      <meet-summary v-show="selectedPlate==3"/>
     </view>
   </view>
 </template>
 
 <script setup lang="ts">
-import { Location2, Clock, Eye } from '@nutui/icons-vue-taro'
+import { Location2, Clock, Download } from '@nutui/icons-vue-taro'
 import "./index.scss"
 import { ref } from 'vue';
 import chat from './chat.vue';
 import agenda from './agenda.vue';
-import command from './command.vue';
+import meetSummary from './meetSummary.vue';
 import Taro from '@tarojs/taro';
 
 const selectedPlate = ref(1);
