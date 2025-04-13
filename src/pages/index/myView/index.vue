@@ -4,23 +4,29 @@
       <view v-if="question" style="position: absolute; right:10px; background-color: #1b71c8; display: inline-flex; color: white; padding:10px; border-radius: 5px">
         {{ question }}
       </view>
-
-      <view v-show="showReply !== ''" style="position: absolute; left:10px; width: 80%; top: 60px; padding:10px; border-radius: 5px; background-color: ghostwhite">
-        <view v-for="(line, index) in replyLines" :key="index" style="display: flex">
-          {{ line }}
+      <view v-show="showReply !== ''"  style="position: absolute; left:10px; width: 80%; top: 60px;display: flex;align-items: start">
+        <nut-avatar><img src="https://qiuniu.phlin.cn/bucket/20250413174706029.png" /></nut-avatar>
+        <view  style="position: absolute; left:50px; width: 80%; padding:10px; border-radius: 5px; background-color: ghostwhite">
+          <view v-for="(line, index) in replyLines" :key="index" style="display: flex">
+            {{ line }}
+          </view>
         </view>
       </view>
+
     </view>
 
     <view style="position: absolute; bottom: 60px; display: inline-flex; align-items: center; width: 90%">
       <nut-input v-model="context" placeholder="请输入问题" />
       <nut-button type="primary" size="small" @click="trigger">发送</nut-button>
+      <nut-button type="success" size="small" style="margin-left: 6px" @click="startVoice">🎙️语音</nut-button>
     </view>
+
   </view>
 </template>
 
 <script setup lang="ts">
 import { ref, computed } from "vue"
+import Taro from "@tarojs/taro"
 import "./index.scss"
 
 const context = ref('')
@@ -48,7 +54,6 @@ const showReplay = computed(() => {
   }
 })
 
-// 把 showReply 拆成行
 const replyLines = computed(() => {
   return showReply.value.split('\n')
 })
@@ -73,4 +78,43 @@ const trigger = () => {
     typeText(showReplay.value)
   }, 1000)
 }
+
+// 📌 语音录制 & 模拟语音识别
+const startVoice = () => {
+  const recorderManager = Taro.getRecorderManager()
+
+  Taro.showToast({
+    title: '正在录音…',
+    icon: 'none',
+    duration: 1000
+  })
+
+  recorderManager.start({
+    duration: 5000,
+    sampleRate: 16000,
+    numberOfChannels: 1,
+    encodeBitRate: 96000,
+    format: 'aac'
+  })
+
+  recorderManager.onStop((res) => {
+    console.log('录音文件地址:', res.tempFilePath)
+
+    // 这里正常是上传语音文件 → 云服务 → 返回文本
+    // 暂时先模拟返回固定文字
+    const mockRecognizedText = "介绍一下西湖论剑大会"
+    context.value = mockRecognizedText
+    Taro.showToast({
+      title: '语音识别完成',
+      icon: 'success',
+      duration: 1000
+    })
+  })
+
+  // 录 3 秒自动停止
+  setTimeout(() => {
+    recorderManager.stop()
+  }, 3000)
+}
+
 </script>

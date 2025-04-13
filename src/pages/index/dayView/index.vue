@@ -47,16 +47,16 @@ const meetingData = [
   {
     data: "4月9日",
     imgUrl: "https://storage.360buyimg.com/jdc-article/NutUItaro34.jpg",
-    title: "教育系统会议",
+    title: "西湖论剑新品发布日",
     time: "9：00-10：00",
     location: "安恒大厦一楼"
   },
   {
-    data: "4月9日",
+    data: "4月4日",
     imgUrl: "https://storage.360buyimg.com/jdc-article/NutUItaro34.jpg",
-    title: "教育系统会议",
-    time: "9：00-10：00",
-    location: "安恒大厦一楼"
+    title: "区块链技术入门培训",
+    time: "9:55",
+    location: "杭州西湖文创园"
   },
 ]
 
