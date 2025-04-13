@@ -14,9 +14,10 @@
 import { ref,h } from 'vue'
 import { Home, Category, Find, Cart, My } from '@nutui/icons-vue-taro'
 import Taro from "@tarojs/taro";
-import HomeView from "./homeView.vue";
-import myView from './myView.vue';
-import DayView from "./dayView.vue";
+import HomeView from "./homeView/index.vue";
+import myView from './myView/index.vue';
+import DayView from "./dayView/index.vue";
+// import "./index.scss";
 
 const active = ref(0)
 

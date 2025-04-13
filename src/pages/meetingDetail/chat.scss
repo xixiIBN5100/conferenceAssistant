@@ -1,0 +1,51 @@
+@import "../../style/color.scss";
+
+.chat {
+  margin: 40px 80px;
+  border-radius: 10px;
+  background-color: $background-color-light;
+  overflow: hidden;
+
+  .text-area {
+    height: 12rem;
+    overflow-y: scroll;
+
+    .words {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin: 8px;
+      
+      .username {
+        font-size: 1.1rem;
+        font-weight: bold;
+      }
+
+      .content {
+        border-radius: 12px;
+        background-color: $background-color-darker;
+        padding: 4px;
+      }
+    }
+  }
+
+  .input-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background-color: $primary-color;
+    padding: 10px;
+
+    .input {
+      border-radius: 8px;
+      border: $background-color-dark solid 4px;
+      background-color: $background-color-light;
+    }
+    
+    .primary-btn {
+      width: 3rem;
+    }
+  }
+}

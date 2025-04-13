@@ -1,0 +1,11 @@
+@import "./style/color.scss";
+
+.primary-btn {
+  border: none;
+  border-radius: 10px; /* 圆角 */
+  background: linear-gradient(to right, $primary-color-light, $primary-color-contrast-light); /* 红色到蓝色渐变 */
+  display: flex;
+  justify-content: center; /* 子元素水平居中 */
+  align-items: center; /* 子元素垂直居中 */
+  padding: 10px; /* 内边距 */
+}
