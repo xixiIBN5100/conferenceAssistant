@@ -21,12 +21,13 @@
           class="swiper"
           direction="horizontal"
         >
-          <nut-swiper-item v-for="(item, index) in list" :key="index" class="swiper-item">
+          <nut-swiper-item v-for="(item, index) in list1" :key="index" class="swiper-item">
             <img :src="item" alt="" class="swiper-image"/>
           </nut-swiper-item>
         </nut-swiper>
       </view>
     </view>
+
     <view>
       <view class="section-title">大会亮点</view>
       <view>
@@ -35,7 +36,7 @@
           class="swiper"
           direction="horizontal"
         >
-          <nut-swiper-item v-for="(item, index) in list" :key="index" class="swiper-item">
+          <nut-swiper-item v-for="(item, index) in list1" :key="index" class="swiper-item">
             <img :src="item" alt="" class="swiper-image"/>
           </nut-swiper-item>
         </nut-swiper>
@@ -49,7 +50,7 @@
           class="swiper"
           direction="horizontal"
         >
-          <nut-swiper-item v-for="(item, index) in list" :key="index" class="swiper-item">
+          <nut-swiper-item v-for="(item, index) in list1" :key="index" class="swiper-item">
             <img :src="item" alt="" class="swiper-image"/>
           </nut-swiper-item>
         </nut-swiper>
@@ -63,7 +64,7 @@
           class="swiper"
           direction="horizontal"
         >
-          <nut-swiper-item v-for="(item, index) in list" :key="index" class="swiper-item">
+          <nut-swiper-item v-for="(item, index) in list1" :key="index" class="swiper-item">
             <img :src="item" alt="" class="swiper-image"/>
           </nut-swiper-item>
         </nut-swiper>
@@ -77,9 +78,13 @@ import { ref } from 'vue'
 import "./index.scss";
 
 const list = ref([
-  'https://storage.360buyimg.com/jdc-article/NutUItaro34.jpg',
-  'https://storage.360buyimg.com/jdc-article/NutUItaro2.jpg',
-  'https://storage.360buyimg.com/jdc-article/welcomenutui.jpg',
-  'https://storage.360buyimg.com/jdc-article/fristfabu.jpg'
+  'https://qiuniu.phlin.cn/bucket/20250413145719631.png',
+  'https://qiuniu.phlin.cn/bucket/20250413145729963.png',
+])
+
+const list1 = ref([
+  'https://qiuniu.phlin.cn/bucket/20250413145925732.png',
+  'https://qiuniu.phlin.cn/bucket/20250413145719631.png',
+  'https://qiuniu.phlin.cn/bucket/20250413145729963.png',
 ])
 </script>

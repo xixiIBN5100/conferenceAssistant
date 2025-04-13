@@ -3,6 +3,7 @@ export default {
     'pages/index/index',
     'pages/day/index',
     'pages/meetingDetail/index',
+    'pages/map/index',
   ],
   window: {
     backgroundTextStyle: 'light',

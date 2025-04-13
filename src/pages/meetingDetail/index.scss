@@ -14,6 +14,15 @@
       font-size: 1.2rem;
     }
 
+    .guide {
+      position: absolute;
+      top: 40px;
+      right: 5.5rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
     .subcribe {
       position: absolute;
       top: 30px;

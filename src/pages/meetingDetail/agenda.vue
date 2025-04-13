@@ -1,9 +1,10 @@
 <template>
   <view class="agenda">
-    <view class="one-agenda" v-for="agenda in agendaData">
+    <!-- <view class="one-agenda" v-for="agenda in agendaData">
       <view class="time">{{ agenda.time }}</view>
       <view class="content">{{ agenda.content }}</view>
-    </view>
+    </view> -->
+    <image style="width: 90vw" src="https://qiuniu.phlin.cn/bucket/20250413144000935.png" mode="widthFix"/>
   </view>
 </template>
 
