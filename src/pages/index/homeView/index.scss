@@ -1,0 +1,24 @@
+.homeView {
+  height: 100vh;
+  position: relative;
+}
+
+.swiper {
+  height: 45vh;
+  display: flex;
+}
+
+.swiper-item {
+  flex: 1;
+}
+
+.swiper-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.section-title {
+  padding: 20px;
+  font-size: 1.5rem;
+} 

@@ -12,5 +12,5 @@
 </template>
 
 <script setup lang="ts">
-import "./myView.scss"
+import "./index.scss"
 </script>
