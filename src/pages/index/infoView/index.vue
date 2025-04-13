@@ -26,7 +26,7 @@
       <!-- 议程列表 -->
       <view v-for="(meeting, index) in myMeetings" :key="index" class="agenda-item">
         <view class="agenda-info">
-          <view class="title">{{ meeting.title }}</view>
+          <view class="title" style="margin-left: -15px; margin-bottom: -10px">{{ meeting.title }}</view>
           <view class="time">{{ meeting.time }}</view>
         </view>
         <view class="agenda-actions">
@@ -38,26 +38,13 @@
           </nut-button>
         </view>
       </view>
-      <view class="menu-item" @click="goTo('feedback')">
-        <view class="left">
-          <nut-icon name="comment" size="20" color="#1b71c8" />
-          <text class="text">意见反馈</text>
-        </view>
-        <nut-icon name="right" size="14" />
-      </view>
-      <view class="menu-item" @click="goTo('about')">
-        <view class="left">
-          <nut-icon name="information" size="20" color="#1b71c8" />
-          <text class="text">关于会议</text>
-        </view>
-        <nut-icon name="right" size="14" />
-      </view>
+
     </view>
 
     <!-- 推荐议程 -->
     <view class="recommend-section">
       <view class="recommend-title">推荐议程</view>
-      <view v-for="(rec, index) in recommendations" :key="index" class="recommend-item" >
+      <view v-for="(rec, index) in recommendations" :key="index" class="recommend-item" style="padding: 10px 0" >
         <view class="rec-title">{{ rec.title }}</view>
         <view class="rec-actions">
           <nut-button size="mini" type="primary" @click="addMeeting(rec, index)">添加</nut-button>
@@ -65,8 +52,23 @@
         </view>
       </view>
     </view>
+    <view class="menu-list">
     <!-- 其他功能项 -->
-
+    <view class="menu-item" @click="goTo('feedback')">
+      <view class="left">
+        <nut-icon name="comment" size="20" color="#1b71c8" />
+        <text class="text">意见反馈</text>
+      </view>
+      <nut-icon name="right" size="14" />
+    </view>
+    <view class="menu-item" @click="goTo('about')">
+      <view class="left">
+        <nut-icon name="information" size="20" color="#1b71c8" />
+        <text class="text">关于会议</text>
+      </view>
+      <nut-icon name="right" size="14" />
+    </view>
+    </view>
     <!-- 退出按钮 -->
     <view class="footer">
       <nut-button class="quit-btn" type="warning" shape="round" block @click="logout">
@@ -242,7 +244,7 @@ const logout = () => {
 
 
       .rec-title {
-        font-size: 1.1rem;
+        font-size: 0.9rem;
         color: #333;
       }
 
