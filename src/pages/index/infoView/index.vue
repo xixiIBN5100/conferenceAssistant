@@ -97,7 +97,6 @@
         </view>
       </view>
     </view>
-
     <!-- 退出按钮 -->
     <view class="footer">
       <nut-button class="logout-btn" type="warning" shape="round" block @click="logout">
@@ -289,7 +288,6 @@ const logout = () => {
       display: flex;
       align-items: center;
       font-size: 30rpx;
-      color: #333;
 
       .nut-icon {
         margin-right: 16rpx;

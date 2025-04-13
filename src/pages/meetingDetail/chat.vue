@@ -1,14 +1,15 @@
 <template>
   <view class="chat">
     <view class="text-area">
-      <view class="words" v-for="word in chatData">
-        <view class="username">{{ word[0] }}</view>
-        <view class="content">{{ word[1] }}</view>
+      <view v-for="(line, index) in replyLines" :key="index" class="words">
+        <view class="username">{{ line[0] }}</view>
+        <view class="content"> {{ line[1] }} </view>
       </view>
     </view>
+
     <view class="input-area">
-      <input type="text" class="input" v-model="inputMsg"/>
-      <view class="primary-btn" @tap="sendMsg">发送</view>
+      <nut-input v-model="context" placeholder="请输入问题" />
+      <nut-button type="primary" size="small" @click="send">发送</nut-button>
     </view>
   </view>
 </template>
@@ -17,19 +18,19 @@
 import { ref } from "vue";
 import "./chat.scss";
 
-const inputMsg = ref("");
+const context = ref('')
 
-const sendMsg = () => {
-  chatData.value.push(["user_me", inputMsg.value]);
-  inputMsg.value = "";
-}
-
-// mock
-const chatData = ref([
-  ['user1', '这就是我想看的'],
-  ['user2', '这就是我想看的'],
-  ['user3', '这就是我想看的'],
-  ['user4', '这就是我想看的'],
+const replyLines = ref([
+  ['user', '123'],
+  ['user', '234'],
+  ['user', '345'],
+  ['user', '456'],
 ])
+
+const send = () => {
+  if (!context.value) return
+  replyLines.value.push(['张三', context.value])
+  context.value = ''
+}
 
 </script>
