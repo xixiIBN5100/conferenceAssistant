@@ -1,6 +1,6 @@
 .homeView {
-  height: 100vh;
   position: relative;
+  padding-bottom: 30px;
 }
 
 .swiper {
@@ -9,6 +9,10 @@
 }
 
 .swiper-item {
+  flex: 1;
+}
+
+.swiper-item-small {
   flex: 1;
 }
 
@@ -21,4 +25,4 @@
 .section-title {
   padding: 20px;
   font-size: 1.5rem;
-} 
+}
