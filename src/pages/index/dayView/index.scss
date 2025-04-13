@@ -1,5 +1,7 @@
+@import "../../../style/color.scss";
+
 .dayView {
-  background-color: beige;
+  background-color: $background-color;
 }
 
 .title {
@@ -22,17 +24,13 @@
 }
 
 .date {
-  background-color: gainsboro;
   font-size: 1.2rem;
-  width: 160px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 34px;
+  border-left: $primary-color-light solid 0.3rem;
+  padding-left: 0.5rem;
 }
 
 .meeting-details {
-  background-color: gainsboro;
+  background-color: $background-color-light;
   width: 100%;
   margin-top: 20px;
   display: flex;
