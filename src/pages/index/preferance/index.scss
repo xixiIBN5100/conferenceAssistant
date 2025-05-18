@@ -1,0 +1,43 @@
+.prefer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  background-color: white;
+
+  .prefer-content {
+    margin: 80px;
+
+    .prefer-title {
+      font-size: large;font-weight: bold;color: #1a355c;
+    }
+    .prefer-tips {
+      color: #1a355c;font-size: small;
+    }
+  }
+
+  .prefer-btns {
+    margin: 80px;
+
+    .submit {
+      border-radius: 10px;
+      border: solid 2px #365888;
+      background-color: #365888;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+    .skip {
+      border-radius: 10px;
+      border: solid 2px #365888;
+      background-color: white;
+      color: #365888;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  }
+}

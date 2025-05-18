@@ -4,6 +4,7 @@ export default {
     // 'pages/day/index',
     'pages/meetingDetail/index',
     'pages/map/index',
+    'pages/login/index',
   ],
   window: {
     backgroundTextStyle: 'light',
