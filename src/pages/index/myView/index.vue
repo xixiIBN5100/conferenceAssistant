@@ -1,12 +1,12 @@
 <template>
-  <view class="page">
+  <view class="page" style="height: 92vh!important; min-height: 92vh !important;">
     <!-- 聊天内容区域 -->
     <scroll-view class="chat-content" scroll-y>
       <!-- 用户问题 -->
       <view v-if="question" class="user-message">
         <view class="message-content">{{ question }}</view>
       </view>
-      
+
       <!-- AI回复 -->
       <view v-show="showReply !== ''" class="ai-message">
         <image class="avatar" src="https://qiuniu.phlin.cn/bucket/20250413174706029.png" mode="aspectFill" />
@@ -20,10 +20,10 @@
 
     <!-- 底部输入区域 -->
     <view class="input-box">
-      <input 
-        class="input" 
-        v-model="context" 
-        placeholder="请输入问题" 
+      <input
+        class="input"
+        v-model="context"
+        placeholder="请输入问题"
         placeholder-class="placeholder"
       />
       <view class="button-group">
