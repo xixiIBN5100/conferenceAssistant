@@ -1,7 +1,7 @@
 <template>
   <view class="page">
     <!-- 顶部用户信息 -->
-    <view class="user-header">
+    <view class="user-header" style="position: relative;">
       <view class="user-avatar">
         <nut-avatar size="large" background="#1b71c8">张</nut-avatar>
       </view>
@@ -9,7 +9,11 @@
         <text class="user-name">张三</text>
         <text class="user-email">zhangsan@conference.com</text>
       </view>
+          <view style="position: absolute;top: 52%;right: -40px;transform: translate(-50%, -50%);">
+      <image src="https://qiuniu.phlin.cn/bucket/20250519002734035.png" mode="widthFix" style="width: 100px; height: 100px;" />
     </view>
+    </view>
+
 
     <!-- 我的议程 -->
     <view class="card">
@@ -22,7 +26,7 @@
           {{ isEditing ? '完成' : '编辑' }}
         </nut-button>
       </view>
-      
+
       <view v-if="myMeetings.length > 0" class="meeting-list">
         <view v-for="(meeting, index) in myMeetings" :key="index" class="meeting-item">
           <view class="meeting-content">
@@ -56,7 +60,7 @@
           <text>推荐议程</text>
         </view>
       </view>
-      
+
       <view v-if="recommendations.length > 0" class="recommend-list">
         <view v-for="(rec, index) in recommendations" :key="index" class="recommend-item">
           <view class="recommend-content">
