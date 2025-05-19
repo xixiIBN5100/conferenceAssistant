@@ -46,3 +46,70 @@
     }
   }
 }
+
+.cz3x85-prefer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  background-color: white;
+
+  .cz3x85-prefer-content {
+    margin: 20px;
+
+    .cz3x85-prefer-title {
+      margin: 30px;
+      font-size: large;font-weight: bold;color: #1a355c;
+    }
+    .cz3x85-prefer-tips {
+      margin: 30px;
+      color: #1a355c;font-size: small;
+    }
+    .cz3x85-prefer-checkbox {
+      margin: 30px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 10px;
+
+      .cz3x85-prefer-box {
+        text-align: center;
+        color: #000000;
+        font-size: medium;
+        padding: 40px 50px;
+        border-radius: 15px;
+        border: solid 2px #f0f0f0;
+        background-color: #f0f0f0;
+      }
+
+      .cz3x85-prefer-boxChoosed {
+        border: solid 2px #000000;
+        background-color: #e4e4e4;
+      }
+    }
+  }
+
+  .cz3x85-prefer-btns {
+    margin: 80px;
+
+    .cz3x85-submit {
+      border-radius: 10px;
+      border: solid 2px #365888;
+      background-color: #365888;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+    .cz3x85-skip {
+      border-radius: 10px;
+      border: solid 2px #365888;
+      background-color: white;
+      color: #365888;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  }
+}

@@ -1,7 +1,6 @@
 <template>
 <view>
-  <preferance-setting v-if="preferanceSetting"/>
-  <view v-else>
+  <view>
     <home-view v-show="active === 0" @updateActive="active = 1" />
     <day-view v-show="active === 1" />
     <my-view v-show="active === 2" />
@@ -22,11 +21,10 @@ import HomeView from "./homeView/index.vue"
 import MyView from './myView/index.vue'
 import DayView from "./dayView/index.vue"
 import InfoView from "./infoView/index.vue"
-import preferanceSetting from "./preferance/index.vue"
 // import "./index.scss";
 
 const active = ref(0)
-const showPreferSetting = ref(false);
+// const showPreferSetting = ref(false);
 
 const List = [
   {
@@ -47,8 +45,6 @@ const List = [
   }
 ]
 
-
-
 onMounted(() => {
   //检测是否登录
   const isLogin = ref("false");
@@ -63,14 +59,14 @@ onMounted(() => {
   }
 
   // 检测是否进行偏好设置
-  const isSettedPrefer = ref("false");
+  // const isSettedPrefer = ref("false");
   // wx.getStorage({
   //   key: 'isSettedPrefer',
   //   success: (res) => isSettedPrefer.value=res.data, // 输出: 'value'
   // })
-  if(isSettedPrefer.value == "false") {
-    showPreferSetting.value = true;
-  }
+  // if(isSettedPrefer.value == "false") {
+  //   showPreferSetting.value = true;
+  // }
 })
 
 </script>
