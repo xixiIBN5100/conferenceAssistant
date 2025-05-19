@@ -21,10 +21,10 @@ import "./chat.scss";
 const context = ref('')
 
 const replyLines = ref([
-  ['user', '123'],
-  ['user', '234'],
-  ['user', '345'],
-  ['user', '456'],
+  ['李四', '小程序做的很好'],
+  ['王五', '大会很精彩'],
+  ['李四', '感觉主讲人很有气场'],
+  ['刘六', '听了讲座受益匪浅'],
 ])
 
 const send = () => {
