@@ -5,6 +5,7 @@ export default {
     'pages/meetingDetail/index',
     'pages/map/index',
     'pages/login/index',
+    'pages/code/index',
   ],
   window: {
     backgroundTextStyle: 'light',

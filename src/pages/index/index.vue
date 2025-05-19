@@ -36,7 +36,7 @@ const List = [
     icon: h(Find)
   },
   {
-    title: '智联会讯',
+    title: '湖宝',
     icon: h(Jimi40)
   },
   {

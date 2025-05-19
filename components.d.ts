@@ -9,10 +9,9 @@ declare module 'vue' {
   export interface GlobalComponents {
     NutAvatar: typeof import('@nutui/nutui-taro')['Avatar']
     NutButton: typeof import('@nutui/nutui-taro')['Button']
+    NutDivider: typeof import('@nutui/nutui-taro')['Divider']
     NutIcon: typeof import('@nutui/nutui-taro')['Icon']
     NutInput: typeof import('@nutui/nutui-taro')['Input']
-    NutSwiper: typeof import('@nutui/nutui-taro')['Swiper']
-    NutSwiperItem: typeof import('@nutui/nutui-taro')['SwiperItem']
     NutTabbar: typeof import('@nutui/nutui-taro')['Tabbar']
     NutTabbarItem: typeof import('@nutui/nutui-taro')['TabbarItem']
   }
