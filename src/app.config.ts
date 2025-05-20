@@ -6,6 +6,7 @@ export default {
     'pages/map/index',
     'pages/login/index',
     'pages/code/index',
+    'pages/ques/index',
   ],
   window: {
     backgroundTextStyle: 'light',

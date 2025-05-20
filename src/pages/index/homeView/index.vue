@@ -112,9 +112,12 @@
 import { ref } from "vue";
 import "./index.scss";
 import { Search } from "@nutui/icons-vue-taro";
-
+import Taro from "@tarojs/taro"
 const text = ref("线下报名参会");
 const handleClick = () => {
+  Taro.navigateTo({
+    url: "/pages/ques/index",
+  });
   text.value = "我的报名信息"
 };
 const emit = defineEmits<{
