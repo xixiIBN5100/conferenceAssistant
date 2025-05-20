@@ -12,10 +12,10 @@
     </view>
     <mySwiper :images="list" :interval="2500" />
     <view>
-      <image src="../../../assist/icon001.png" style="height: 50px; width: 80vw;"/>
+      <img src="https://qiuniu.phlin.cn/bucket/20250520204500480.png" mode="widthFix" style="width: 80vw;"/>
     </view>
     <view style="margin-top: 20px;">
-      <image src="../../../assist/icon002.png" style="height: 70px; width: 90vw;"/>
+      <img src="https://qiuniu.phlin.cn/bucket/20250520204546526.png" mode="widthFix" style="width: 90vw;"/>
     </view>
     <view style="width: 90%;">
       <view style="font-size: larger;font-weight: bold;margin: 20px 0;">为您定制</view>
