@@ -3,8 +3,9 @@
   <view>
     <home-view v-show="active === 0" @updateActive="active = 1" />
     <day-view v-show="active === 1" />
-    <my-view v-show="active === 2" />
-    <info-view v-show="active === 3" />
+    <find-view v-show="active === 2"/>
+    <my-view v-show="active === 3" />
+    <info-view v-show="active === 4" />
     <nut-tabbar v-model="active" bottom safe-area-inset-bottom placeholder>
       <nut-tabbar-item v-for="(item, index) in List" :key="index" :tab-title="item.title" :icon="item.icon" @click="active = index">
       </nut-tabbar-item>
@@ -15,12 +16,13 @@
 
 <script setup lang="ts">
 import { ref, h, onMounted } from 'vue'
-import { Home, Find, My2, Jimi40 } from '@nutui/icons-vue-taro'
+import { Home, Find, My2, Jimi40, Search } from '@nutui/icons-vue-taro'
 import Taro from "@tarojs/taro"
 import HomeView from "./homeView/index.vue"
 import MyView from './myView/index.vue'
 import DayView from "./dayView/index.vue"
 import InfoView from "./infoView/index.vue"
+import FindView from "./findView/index.vue"
 // import "./index.scss";
 
 const active = ref(0)
@@ -36,7 +38,11 @@ const List = [
     icon: h(Find)
   },
   {
-    title: '智联会讯',
+    title: '发现',
+    icon: h(Search)
+  },
+  {
+    title: '湖宝·会灵',
     icon: h(Jimi40)
   },
   {

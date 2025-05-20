@@ -1,3 +1,3 @@
 export default {
-  navigationBarTitleText: '智联会讯'
+  navigationBarTitleText: '湖宝·会灵'
 }
