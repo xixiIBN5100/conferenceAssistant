@@ -42,7 +42,7 @@ const List = [
     icon: h(Search)
   },
   {
-    title: '湖宝·会灵',
+    title: '湖宝',
     icon: h(Jimi40)
   },
   {
