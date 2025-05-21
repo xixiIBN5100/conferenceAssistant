@@ -6,7 +6,9 @@ export default {
     'pages/map/index',
     'pages/login/index',
     'pages/code/index',
-    'pages/kfc/index'
+    'pages/kfc/index',
+    'pages/ques/index',
+    'pages/useKfcTickit/index',
   ],
   window: {
     backgroundTextStyle: 'light',

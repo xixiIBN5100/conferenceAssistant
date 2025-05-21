@@ -38,6 +38,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import "./index.scss"
+import Taro from '@tarojs/taro';
 
 const tickitType = ref(0);
 const tickits = ref([
@@ -78,7 +79,9 @@ const useTickit = (to:number) => {
     })
   }
   else {
-    //new page
+    Taro.navigateTo({
+      url: "/pages/useKfcTickit/index"
+    })
   }
 }
 
