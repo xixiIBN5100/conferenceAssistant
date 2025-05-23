@@ -23,11 +23,19 @@ import MyView from './myView/index.vue'
 import DayView from "./dayView/index.vue"
 import InfoView from "./infoView/index.vue"
 import FindView from "./findView/index.vue"
+import { watch } from 'vue'
 // import "./index.scss";
 
 const active = ref(0)
 // const showPreferSetting = ref(false);
-
+watch(active, () => {
+  if(active.value === 3) {
+    Taro.showLoading({
+      title: '加载中',
+      mask: true
+    })
+  }
+})
 const List = [
   {
     title: '首页',

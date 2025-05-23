@@ -1,7 +1,7 @@
 <template>
   <view class="page">
     <!-- 顶部用户信息 -->
-    <view class="user-header" style="position: relative;">
+    <view class="user-header" style="position: relative">
       <view class="user-avatar">
         <nut-avatar size="large" background="#1b71c8">张</nut-avatar>
       </view>
@@ -9,11 +9,22 @@
         <text class="user-name">张三</text>
         <text class="user-email">zhangsan@conference.com</text>
       </view>
-          <view style="position: absolute;top: 52%;right: -40px;transform: translate(-50%, -50%);" @click="navigateToPage('/pages/code/index')">
-      <image src="https://qiuniu.phlin.cn/bucket/20250519002734035.png" mode="widthFix" style="width: 100px; height: 100px;" />
+      <view
+        style="
+          position: absolute;
+          top: 52%;
+          right: -40px;
+          transform: translate(-50%, -50%);
+        "
+        @click="navigateToPage('/pages/code/index')"
+      >
+        <image
+          src="https://qiuniu.phlin.cn/bucket/20250519002734035.png"
+          mode="widthFix"
+          style="width: 100px; height: 100px"
+        />
+      </view>
     </view>
-    </view>
-
 
     <!-- 我的议程 -->
     <view class="card">
@@ -23,12 +34,16 @@
           <text>我的议程</text>
         </view>
         <nut-button size="small" type="primary" plain @click="toggleEdit">
-          {{ isEditing ? '完成' : '编辑' }}
+          {{ isEditing ? "完成" : "编辑" }}
         </nut-button>
       </view>
 
       <view v-if="myMeetings.length > 0" class="meeting-list">
-        <view v-for="(meeting, index) in myMeetings" :key="index" class="meeting-item">
+        <view
+          v-for="(meeting, index) in myMeetings"
+          :key="index"
+          class="meeting-item"
+        >
           <view class="meeting-content">
             <text class="meeting-title">{{ meeting.title }}</text>
             <view class="meeting-meta">
@@ -37,10 +52,27 @@
             </view>
           </view>
           <view class="meeting-actions">
-            <nut-button v-if="!isEditing" size="small" type="primary" plain @click="navigateTo(meeting.address)">
+            <nut-button
+              v-if="!isEditing"
+              size="small"
+              type="primary"
+              plain
+              @click="() => {
+                Taro.showLoading({
+                  title: '加载中',
+                  mask: true,
+                })
+              }"
+            >
               导航
             </nut-button>
-            <nut-button v-if="isEditing" size="small" type="danger" plain @click="removeMeeting(index)">
+            <nut-button
+              v-if="isEditing"
+              size="small"
+              type="danger"
+              plain
+              @click="removeMeeting(index)"
+            >
               删除
             </nut-button>
           </view>
@@ -62,7 +94,11 @@
       </view>
 
       <view v-if="recommendations.length > 0" class="recommend-list">
-        <view v-for="(rec, index) in recommendations" :key="index" class="recommend-item">
+        <view
+          v-for="(rec, index) in recommendations"
+          :key="index"
+          class="recommend-item"
+        >
           <view class="recommend-content">
             <text class="recommend-title">{{ rec.title }}</text>
             <view class="recommend-meta">
@@ -71,8 +107,15 @@
             </view>
           </view>
           <view class="recommend-actions">
-            <nut-button size="small" type="primary" @click="addMeeting(rec, index)">添加</nut-button>
-            <nut-button size="small" plain @click="removeRecommendation(index)">不感兴趣</nut-button>
+            <nut-button
+              size="small"
+              type="primary"
+              @click="addMeeting(rec, index)"
+              >添加</nut-button
+            >
+            <nut-button size="small" plain @click="removeRecommendation(index)"
+              >不感兴趣</nut-button
+            >
           </view>
         </view>
       </view>
@@ -85,7 +128,10 @@
     <!-- 功能菜单 -->
     <view class="card">
       <view class="menu-list">
-        <view class="menu-item" @click="navigateToPage('/pages/feedback/index')">
+        <view
+          class="menu-item"
+          @click="navigateToPage('/pages/feedback/index')"
+        >
           <view class="menu-left">
             <nut-icon name="comment" size="16" color="#1b71c8" />
             <text>意见反馈</text>
@@ -103,7 +149,13 @@
     </view>
     <!-- 退出按钮 -->
     <view class="footer">
-      <nut-button class="logout-btn" type="warning" shape="round" block @click="logout">
+      <nut-button
+        class="logout-btn"
+        type="warning"
+        shape="round"
+        block
+        @click="logout"
+      >
         退出登录
       </nut-button>
     </view>
@@ -111,74 +163,74 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue"
-import Taro from "@tarojs/taro"
-import eventCenter from "../../../plugin/event/event"
+import { ref } from "vue";
+import Taro from "@tarojs/taro";
+import eventCenter from "../../../plugin/event/event";
 
-const isEditing = ref(false)
+const isEditing = ref(false);
 
 const myMeetings = ref([
   { title: "AI安全专场", time: "5月9日 10:00", address: "杭州市西湖区XX路" },
   { title: "网络攻防实战", time: "5月11日 15:30", address: "杭州市西湖区YY路" },
-])
+]);
 
 const recommendations = ref([
   { title: "云安全前沿论坛", time: "5月10日 15:00" },
   { title: "高校网络安全建设", time: "5月11日 09:00" },
   { title: "大模型安全专场", time: "5月11日 17:30" },
-])
+]);
 
-eventCenter.on('conflictOff', removeMeetingsAfter)
+eventCenter.on("conflictOff", removeMeetingsAfter);
 
 const toggleEdit = () => {
-  isEditing.value = !isEditing.value
-}
+  isEditing.value = !isEditing.value;
+};
 
 const removeMeeting = (index: number) => {
-  myMeetings.value.splice(index, 1)
-}
+  myMeetings.value.splice(index, 1);
+};
 
 const navigateTo = (address: string) => {
   Taro.navigateTo({
-    url: `/pages/map/index?address=${encodeURIComponent(address)}`
-  })
-}
+    url: `/pages/map/index?address=${encodeURIComponent(address)}`,
+  });
+};
 
 const navigateToPage = (url: string) => {
-  Taro.navigateTo({ url })
-}
+  Taro.navigateTo({ url });
+};
 
 const addMeeting = (rec: { title: string; time: string }, index: number) => {
-  myMeetings.value.push({ ...rec, address: "待定" })
-  Taro.showToast({ title: "已添加", icon: "success" })
-  recommendations.value.splice(index, 1)
-}
+  myMeetings.value.push({ ...rec, address: "待定" });
+  Taro.showToast({ title: "已添加", icon: "success" });
+  recommendations.value.splice(index, 1);
+};
 
 const removeRecommendation = (index: number) => {
-  recommendations.value.splice(index, 1)
-}
+  recommendations.value.splice(index, 1);
+};
 
 const logout = () => {
   Taro.showModal({
-    title: '确认退出？',
-    content: '确定要退出登录吗？',
-    success: res => {
+    title: "确认退出？",
+    content: "确定要退出登录吗？",
+    success: (res) => {
       if (res.confirm) {
-        Taro.clearStorageSync()
-        Taro.redirectTo({ url: '/pages/login/index' })
+        Taro.clearStorageSync();
+        Taro.redirectTo({ url: "/pages/login/index" });
       }
-    }
-  })
-}
+    },
+  });
+};
 
 function removeMeetingsAfter() {
   // 过滤掉截止时间后的会议
-  myMeetings.value = myMeetings.value.filter(meeting => {
-    
-    return !(meeting.title == "网络攻防实战" || meeting.title == "大模型安全专场")
-  })
+  myMeetings.value = myMeetings.value.filter((meeting) => {
+    return !(
+      meeting.title == "网络攻防实战" || meeting.title == "大模型安全专场"
+    );
+  });
 }
-
 </script>
 
 <style lang="scss">
@@ -223,7 +275,7 @@ function removeMeetingsAfter() {
   border-radius: 16rpx;
   padding: 24rpx;
   margin-bottom: 24rpx;
-  box-shadow: 0 2rpx 12rpx rgba(0,0,0,0.04);
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.04);
 
   .card-header {
     display: flex;
@@ -245,8 +297,10 @@ function removeMeetingsAfter() {
   }
 }
 
-.meeting-list, .recommend-list {
-  .meeting-item, .recommend-item {
+.meeting-list,
+.recommend-list {
+  .meeting-item,
+  .recommend-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -258,18 +312,21 @@ function removeMeetingsAfter() {
       padding-bottom: 0;
     }
 
-    .meeting-content, .recommend-content {
+    .meeting-content,
+    .recommend-content {
       flex: 1;
       margin-right: 24rpx;
 
-      .meeting-title, .recommend-title {
+      .meeting-title,
+      .recommend-title {
         font-size: 30rpx;
         color: #333;
         margin-bottom: 12rpx;
         display: block;
       }
 
-      .meeting-meta, .recommend-meta {
+      .meeting-meta,
+      .recommend-meta {
         display: flex;
         align-items: center;
         font-size: 26rpx;
@@ -281,7 +338,8 @@ function removeMeetingsAfter() {
       }
     }
 
-    .meeting-actions, .recommend-actions {
+    .meeting-actions,
+    .recommend-actions {
       display: flex;
       gap: 12rpx;
     }

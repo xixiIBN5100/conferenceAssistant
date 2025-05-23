@@ -25,8 +25,8 @@
 
     <!-- 底部输入区域 -->
     <view style="
-      position: fixed; 
-      bottom: 90px; 
+      position: fixed;
+      bottom: 90px;
       box-sizing: border-box;
       gap: 6px;
       width: 100%;
