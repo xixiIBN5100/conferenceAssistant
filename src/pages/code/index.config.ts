@@ -1,3 +1,3 @@
 export default {
-  navigationBarTitleText: '湖宝 • 会灵'
+  navigationBarTitleText: '扫码'
 }

@@ -46,7 +46,7 @@
       >
         <view style="font-size: 25px">张三</view>
         <image
-          src="../../assist/code.png"
+          src="https://qiuniu.phlin.cn/bucket/20250520204533402.png"
           mode="aspectFill"
           style="height: 200px; width: 200px"
         />

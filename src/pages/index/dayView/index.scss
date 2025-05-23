@@ -1,64 +1,34 @@
-@import "../../../style/color.scss";
-
-.dayView {
-  background-color: $background-color;
-}
-
-.title {
+.subedBtn {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  width: 5rem;
+  height: 1.3rem;
+  border-radius: 0.6rem;
+  background-color: #5b667b;
+  color: #e6e6e6;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 30px;
-  text {
-    font-size: 3rem;
-  }
 }
 
-.search {
-  padding: 0 30px;
+.unsubedBtn {
+  background-color: #2853a8;
+  // color: #a995d4;
 }
 
-.meeting {
-  margin-top: 20px;
-  padding: 10px;
-}
-
-.date {
-  font-size: 1.2rem;
-  border-left: $primary-color-light solid 0.3rem;
-  padding-left: 0.5rem;
-}
-
-.meeting-details {
-  background-color: $background-color-light;
-  width: 100%;
-  margin-top: 20px;
+.dataBtn {
+  border-radius: 10px;
+  border: 4px solid #e9e07a;
+  color: #212121;
   display: flex;
   flex-direction: column;
-}
-
-.meeting-image {
-  width: 100%;
-  display: block;
-}
-
-.meeting-title {
-  font-size: 36rpx;
-  padding: 15px;
-}
-
-.meeting-time {
-  font-size: 28rpx;
-  padding: 0 15px;
-  display: flex;
   align-items: center;
-  gap: 10rpx;
+  gap: 6px;
+  padding: 8px 12px;
 }
 
-.meeting-location {
-  display: flex;
-  align-items: center;
-  gap: 10rpx;
-  font-size: 28rpx;
-  padding: 0 15px 10px;
-} 
+.dataBtnChoosed {
+  border: 4px solid #a995d4;
+  color: #a995d4;
+  background-color: #ffecd7;
+}

@@ -113,19 +113,22 @@
 <script setup lang="ts">
 import { ref } from "vue"
 import Taro from "@tarojs/taro"
+import eventCenter from "../../../plugin/event/event"
 
 const isEditing = ref(false)
 
 const myMeetings = ref([
-  { title: "AI安全专场", time: "4月20日 10:00", address: "杭州市西湖区XX路" },
-  { title: "网络攻防实战", time: "4月20日 13:30", address: "杭州市西湖区YY路" },
+  { title: "AI安全专场", time: "5月9日 10:00", address: "杭州市西湖区XX路" },
+  { title: "网络攻防实战", time: "5月11日 15:30", address: "杭州市西湖区YY路" },
 ])
 
 const recommendations = ref([
-  { title: "云安全前沿论坛", time: "4月20日 15:00" },
-  { title: "高校网络安全建设", time: "4月21日 09:00" },
-  { title: "大模型安全专场", time: "4月21日 13:30" },
+  { title: "云安全前沿论坛", time: "5月10日 15:00" },
+  { title: "高校网络安全建设", time: "5月11日 09:00" },
+  { title: "大模型安全专场", time: "5月11日 17:30" },
 ])
+
+eventCenter.on('conflictOff', removeMeetingsAfter)
 
 const toggleEdit = () => {
   isEditing.value = !isEditing.value
@@ -167,6 +170,15 @@ const logout = () => {
     }
   })
 }
+
+function removeMeetingsAfter() {
+  // 过滤掉截止时间后的会议
+  myMeetings.value = myMeetings.value.filter(meeting => {
+    
+    return !(meeting.title == "网络攻防实战" || meeting.title == "大模型安全专场")
+  })
+}
+
 </script>
 
 <style lang="scss">
@@ -175,6 +187,7 @@ const logout = () => {
   background-color: #f5f6fa;
   padding: 24rpx;
   box-sizing: border-box;
+  overflow-y: scroll;
 }
 
 .user-header {
