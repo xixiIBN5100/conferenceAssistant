@@ -1,6 +1,6 @@
 <template>
 <view>
-  <view>
+  <view style="display: flex; flex-direction: column; height: 100vh;width: 100vw;">
     <home-view v-show="active === 0" @updateActive="active = 1" />
     <day-view v-show="active === 1" />
     <find-view v-show="active === 2"/>

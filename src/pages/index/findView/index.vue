@@ -12,14 +12,14 @@
     </view>
     <mySwiper :images="list" :interval="2500" />
     <view>
-      <image src="../../../assist/icon001.png" style="height: 50px; width: 80vw;"/>
+      <img src="https://qiuniu.phlin.cn/bucket/20250520204500480.png" mode="widthFix" style="width: 80vw;"/>
     </view>
     <view style="margin-top: 20px;">
-      <image src="../../../assist/icon002.png" style="height: 70px; width: 90vw;"/>
+      <img src="https://qiuniu.phlin.cn/bucket/20250520204546526.png" mode="widthFix" style="width: 90vw;"/>
     </view>
     <view style="width: 90%;">
       <view style="font-size: larger;font-weight: bold;margin: 20px 0;">为您定制</view>
-      <view style="border-radius: 20px;background-color: #efefef;padding: 15px;width: 90%;height: 70px;">
+      <view style="border-radius: 20px;background-color: #efefef;padding: 15px;width: 90%;height: 70px;" @tap="tokfc">
         <img src="https://www.kfc.com.cn/kfccda/images/npic02.jpg" mode="aspectFill" style="float: left;padding: 0;border-radius: 10px;height: 70px;width: 100px;overflow: hidden;margin-right: 20px;"/>
         <view style="font-size: large;">肯德基</view>
         <view>
@@ -35,11 +35,18 @@
 import { Search } from "@nutui/icons-vue-taro";
 import mySwiper from "../../../component/mySwiper/index.vue";
 import { ref } from "vue";
+import Taro from "@tarojs/taro";
 
 const list = ref([
   'https://qiuniu.phlin.cn/bucket/20250520135849531.png',
   'https://qiuniu.phlin.cn/bucket/20250520135907701.png',
   'https://qiuniu.phlin.cn/bucket/20250520135923855.png'
 ])
+
+const tokfc = () => {
+  Taro.navigateTo({
+    url: "/pages/kfc/index"
+  })
+}
 
 </script>

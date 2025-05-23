@@ -24,7 +24,7 @@
       </view>
     </view>
     <view>
-      <image style="width: 100vw;" src="../../assist/001.jpg" mode="aspectFill" />
+      <image style="width: 100vw;" src="https://qiuniu.phlin.cn/bucket/20250520204516028.jpeg" mode="aspectFill" />
     </view>
     <view class="function-bar">
       <view class="tag-bar">
